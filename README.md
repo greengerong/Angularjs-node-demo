@@ -14,6 +14,7 @@ Angularjs-node-demo
  
 start node server: supervisor app.js
 
+###build
 BTW: if you use mac 32, I will congratulate to you, because I alredy code for init env.
 so you can run those command:
 1: bash ./build/init.sh (notice:dowload mongodb will spend too much time,you can copy your mongodb to tools).
