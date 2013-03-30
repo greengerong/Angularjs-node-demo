@@ -12,7 +12,7 @@ Angularjs-node-demo
     4:export PATH=XX:$PATH
     5: test : 1 sudo mongod 
  
-##start node server: supervisor app.js
+start node server: supervisor app.js
 
 BTW: if you use mac 32, I will congratulate to you, because I alredy code for init env.
 so you can run those command:
