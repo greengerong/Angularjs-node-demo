@@ -5,6 +5,7 @@ Angularjs-node-demo
  1:node.js
  2:npm install.
  3:npm install supervisor -g (supervisor app.js)
+   npm install jasmine-node -g
  4; mongodb
     1: dowload mongodb
     2;uncompress mongodb to XX

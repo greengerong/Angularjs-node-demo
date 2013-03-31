@@ -3,7 +3,7 @@
 
  npm install
  sudo npm install supervisor -g
-
+ sudo npm install jasmine-node -g
 
 if [ -f "./tools/mongodb.tgz" ]
 then

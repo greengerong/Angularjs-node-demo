@@ -4,7 +4,8 @@
  */
 
 var express = require('express')
-  , routes = require('./routes')
+  , routes = require('./routes/index')
+  , items = require('./routes/items')
   , user = require('./routes/user')
   , http = require('http')
   , path = require('path');
@@ -28,7 +29,11 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
-app.get('/users', user.list);
+app.get('/items', items.getAll);
+app.get('/items/:id', items.getById);
+app.post('/items', items.add);
+app.put('/items/:id', items.update);
+app.delete('/items/:id', items.remove);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
