@@ -51,7 +51,7 @@ autoWatch = false;
 
 junitReporter = {
     // will be resolved to basePath (in the same way as files/exclude patterns)
-    outputFile: 'test/javascript/build/output/test-results.xml'
+    outputFile: 'target/js-test/test-results.xml'
 };
 
 // Start these browsers, currently available:
@@ -75,5 +75,5 @@ singleRun = true;
 
 coverageReporter = {
         type : 'html',
-        dir : 'target/js-test/'
+        dir : 'target/js-test/coverage/'
       };
