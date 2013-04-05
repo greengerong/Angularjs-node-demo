@@ -4,6 +4,7 @@
  npm install
  sudo npm install supervisor -g
  sudo npm install jasmine-node -g
+ sudo npm install testacular -g
 
 if [ -f "./tools/mongodb.tgz" ]
 then

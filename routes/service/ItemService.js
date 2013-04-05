@@ -20,7 +20,8 @@ itemService.save = function(items,done,error){
 
 
 itemService.update = function(id,item,done,error){
-	item._id = id;
+	//item._id = id;
+	delete (item["_id"]);
 	db.items.update({_id:id},{$set: item},function(err, updated) {
 	  if( err) {
 		error(err);
