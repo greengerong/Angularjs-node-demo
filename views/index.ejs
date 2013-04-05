@@ -2,7 +2,28 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/css/bootstrap.css' />
+    <link rel='stylesheet' href='/css/bootstrap-responsive.css' />
+    <link rel='stylesheet' href='/css/style.css' />
+    <script type="text/javascript" src="/javascripts/angular.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.js"></script>
+    <script type="text/javascript" src="/javascripts/underscore.js"></script>
+
+	<!--[if lte IE 8]>
+	<script src=”http://html5shiv.googlecode.com/svn/trunk/html5.js”></script>
+	<script src=”http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js”></script>
+	
+	<script>
+		document.createElement('ng-include');
+		document.createElement('ng-pluralize');
+		document.createElement('ng-view');	 
+		// Optionally these for CSS
+		document.createElement('ng:include');
+		document.createElement('ng:pluralize');
+		document.createElement('ng:view');
+	</script>
+	<![endif]-->
   </head>
   <body>
     <h1><%= title %></h1>
