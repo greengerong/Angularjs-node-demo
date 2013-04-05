@@ -22,7 +22,7 @@ itemService.save = function(items,done,error){
 itemService.update = function(id,item,done,error){
 	//item._id = id;
 	delete (item["_id"]);
-	db.items.update({_id:id},{$set: item},function(err, updated) {
+	db.items.update({_id:db.ObjectId(id)},{$set: item},function(err, updated) {
 	  if( err) {
 		error(err);
 	  }
@@ -33,11 +33,11 @@ itemService.update = function(id,item,done,error){
 };
 
 itemService.remove = function(id,done,error){
-	db.items.remove({_id : id},function(err, removed) {
-	  if( err) {
+	db.items.remove({_id : db.ObjectId(id)},function(err, removed) {
+	  if(err) {
 		error(err);
 	  }
-	  else { 
+	  else {
 	  	done(removed);
 	  }
 	})

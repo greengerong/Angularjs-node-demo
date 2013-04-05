@@ -23,7 +23,6 @@ exports.getAll = function(req, res){
 
 exports.getById = function(req, res){
 	var itemId = req.params.id;	
-	console.log("findById:" + itemId);
 	itemService.findById(itemId,doneCallback(req,res),errorCallback(req,res));
 };
 
@@ -35,7 +34,8 @@ exports.add = function(req, res){
 exports.update = function(req, res){
 	var itemId = req.params.id;	
 	var item = req.body;	
-	itemService.update(ietmId,item,doneCallback(req,res),errorCallback(req,res));
+	console.log(itemId,item);
+	itemService.update(itemId,item,doneCallback(req,res),errorCallback(req,res));
 };
 
 exports.remove = function(req, res){

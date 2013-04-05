@@ -1,0 +1,27 @@
+
+<h2><%=title%></h2>
+<div class="content">
+		<div class="dropdown">
+       <a class="dropdown-toggle" href="#item">Add</a>
+  </div>
+	<table class="table table-hover">
+	<thead>
+		<tr>
+			<td>Id</td>
+			<td>Name</td>
+			<td>Price</td>
+			<td>Amount</td>
+			<td style="width:80px;"></td>
+		</tr>
+	</thead>
+	<tbody >
+ 		<tr ng-repeat="item in items | orderBy:'name'"><td>{{item._id}}</td>
+			<td>{{item.name}}</td>
+			<td>{{item.price}}</td>
+			<td>{{item.amount}}</td>
+			<td><a href="#items/{{item._id}}">edit</a>
+				<a href="javascript:void(0);" ng-click="delete(item._id);">delete</a></td>
+ 		</tr>
+	</tbody>	
+	</table>
+</div>

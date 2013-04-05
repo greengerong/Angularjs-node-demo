@@ -5,6 +5,7 @@
 
 var express = require('express')
   , routes = require('./routes/index')
+  , templates = require('./routes/templates')
   , items = require('./routes/items')
   , user = require('./routes/user')
   , http = require('http')
@@ -29,6 +30,8 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
+app.get('/items-template', templates.items);
+app.get('/items-view-template', templates.view);
 app.get('/items', items.getAll);
 app.get('/items/:id', items.getById);
 app.post('/items', items.add);

@@ -1,0 +1,29 @@
+
+<h2><%=title%></h2>
+<div class="content">
+	</table>
+	<form class="form-horizontal">
+	  <div class="control-group">
+	    <label class="control-label" for="name">Name</label>
+	    <div class="controls">
+	      <input type="text" id="name" ng-model="item.name" required>
+	    </div>
+	  </div>
+	   <div class="control-group">
+	    <label class="control-label" for="price">Price</label>
+	    <div class="controls">
+	      <input type="number" id="price" ng-model="item.price" min="0" required/>
+	    </div>
+	  </div>
+	   <div class="control-group">
+	    <label class="control-label" for="amount">Amount</label>
+	    <div class="controls">
+	      <input type="number" id="amount" ng-model="item.amount" min="0" required/>
+	    </div>
+	  </div>
+	  <div style="margin-left:160px;">
+		<button class="btn btn-primary" type="button" ng-click="save();">Save</button>
+		<a class="btn btn-primary" href="#items">Cancel</a>
+	  </div>
+	</form>
+</div>
