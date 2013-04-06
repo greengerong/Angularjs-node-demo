@@ -9,7 +9,7 @@ var itemService = {};
 
 itemService.save = function(items,done,error){
 	db.items.save(items,function(err, saved){
-		if( err ) {
+		if( err || !saved) {
 			error(err);
 		}
   		else {
@@ -20,10 +20,11 @@ itemService.save = function(items,done,error){
 
 
 itemService.update = function(id,item,done,error){
-	//item._id = id;
+	
 	delete (item["_id"]);
 	db.items.update({_id:db.ObjectId(id)},{$set: item},function(err, updated) {
-	  if( err) {
+
+	  if( err || !updated) {
 		error(err);
 	  }
 	  else {
@@ -34,7 +35,8 @@ itemService.update = function(id,item,done,error){
 
 itemService.remove = function(id,done,error){
 	db.items.remove({_id : db.ObjectId(id)},function(err, removed) {
-	  if(err) {
+		console.log("111",err,removed)
+	  if(err ||!removed) {
 		error(err);
 	  }
 	  else {

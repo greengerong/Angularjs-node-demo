@@ -10,8 +10,9 @@ app.factory('itemsResource', function($http){
       	get:function(id,done){
       		$http.get("items/" + id).success(done).error(log);
       	},
-      	update:function(item,done){
-      		$http.put("items/" + item._id, item).success(done).error(log);
+      	update:function(id,item,done){
+                  item._id = id;
+      		$http.put("items/" + id, item).success(done).error(log);
       	},
       	save:function(item,done){
       		$http.post("items", item).success(done).error(log);

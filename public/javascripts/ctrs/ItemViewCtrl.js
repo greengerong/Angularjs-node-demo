@@ -6,7 +6,7 @@ var ItemViewCtrl = function($scope,$routeParams,$location,itemsResource){
 	});
 
 	$scope.save =function(){
-		itemsResource.update(this.item,function(){
+		itemsResource.update($routeParams.id,this.item,function(){
 			$location.path("#items");
 		});
 	 };

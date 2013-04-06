@@ -7,7 +7,7 @@
 	<table class="table table-hover">
 	<thead>
 		<tr>
-			<td>Id</td>
+			<td style="width:80px;">Id</td>
 			<td>Name</td>
 			<td>Price</td>
 			<td>Amount</td>
@@ -17,11 +17,23 @@
 	<tbody >
  		<tr ng-repeat="item in items | orderBy:'name'"><td>{{item._id}}</td>
 			<td>{{item.name}}</td>
-			<td>{{item.price}}</td>
-			<td>{{item.amount}}</td>
+			<td>{{item.price | currency}}</td>
+			<td>{{item.amount | number:0}}</td>
 			<td><a href="#items/{{item._id}}">edit</a>
 				<a href="javascript:void(0);" ng-click="delete(item._id);">delete</a></td>
  		</tr>
-	</tbody>	
+	</tbody>
+	<tfoot ng-switch="!(items.length)">
+       <tr ng-switch-when="true">
+         <td colspan="4" > <h3 class="text-center">No Content <a class="dropdown-toggle" href="#item">Add</a></h3></td>
+       </tr>
+       <tr ng-switch-default>
+         <td>Total:</td>
+         <td></td>
+         <td>{{items | sum:'price' | currency}}</td>
+         <td>{{items | sum:'amount' | number:0}}</td>
+         <td></td>
+       </tr>
+	</tfoot>	
 	</table>
 </div>

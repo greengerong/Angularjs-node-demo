@@ -7,4 +7,6 @@ app.
       when('/items/:id', {templateUrl: 'items-view-template',   controller: ItemViewCtrl}).
       when('/item', {templateUrl: 'items-view-template',   controller: ItemAddCtrl}).
       otherwise({redirectTo: '/items'});
+}]).factory("underscore",["$window",function($window){
+	return $window._;
 }]);

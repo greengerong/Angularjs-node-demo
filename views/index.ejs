@@ -12,6 +12,9 @@
     <script type="text/javascript" src="/javascripts/ngresource.js"></script>
     <script type="text/javascript" src="/javascripts/app/app.js"></script>
      
+     <% filters.forEach(function(file){ %>
+       <script type="text/javascript" src="/javascripts/filter/<%=file%>"></script>
+      <% }) %>
       <% services.forEach(function(file){ %>
        <script type="text/javascript" src="/javascripts/services/<%=file%>"></script>
       <% }) %>
