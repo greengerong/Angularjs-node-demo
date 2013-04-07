@@ -4,7 +4,7 @@
  npm install
  sudo npm install supervisor -g
  sudo npm install jasmine-node -g
- sudo nnpm install -g karma
+ sudo npm install -g karma
 
 if [ -f "./tools/mongodb.tgz" ]
 then
