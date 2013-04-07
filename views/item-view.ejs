@@ -1,28 +1,41 @@
 
 <h2><%=title%></h2>
 <div class="content">
-	</table>
-	<form class="form-horizontal">
-	  <div class="control-group">
+	<form name="form" class="form-horizontal">
+	  <div class="control-group" ng-class="{true:'error'}[form.name.$error.required]">
 	    <label class="control-label" for="name">Name</label>
 	    <div class="controls">
-	      <input type="text" id="name" ng-model="item.name" required>
+	      <input type="text" id="name" name="name" ng-model="item.name" required />
+	        <div class="help-block">
+	       <span ng-show="form.name.$error.required">Tell me your name.</span>
+	   </div>
 	    </div>
 	  </div>
-	   <div class="control-group">
+
+	   <div class="control-group" ng-class="{true:'error'}[form.price.$error.required || form.price.$error.number || form.price.$error.min]">
 	    <label class="control-label" for="price">Price</label>
 	    <div class="controls">
-	      <input type="number" id="price" ng-model="item.price" min="0" required/>
+	      <input type="number" id="price" name="price" ng-model="item.price" min="0" required/>
+	        <div class="help-block">
+	       <span  ng-show="form.price.$error.required">Tell me price.</span>
+	       <span  ng-show="form.price.$error.number">Must be number.</span>
+	       <span  ng-show="form.price.$error.min">Must be >= 0.</span>
+	   </div>
 	    </div>
 	  </div>
-	   <div class="control-group">
+	   <div class="control-group" ng-class="{true:'error'}[form.amount.$error.required || form.amount.$error.number || form.amount.$error.min]">
 	    <label class="control-label" for="amount">Amount</label>
 	    <div class="controls">
-	      <input type="number" id="amount" ng-model="item.amount" min="0" required/>
+	      <input type="number" id="amount" name="amount" ng-model="item.amount" min="0" required/>
+	        <div class="help-block">
+	       <span ng-show="form.amount.$error.required">Tell me amount.</span>
+	       <span  ng-show="form.amount.$error.number">Must be number.</span>
+	       <span  ng-show="form.amount.$error.min">Must be >= 0.</span>
+	   </div>
 	    </div>
 	  </div>
 	  <div style="margin-left:160px;">
-		<button class="btn btn-primary" type="button" ng-click="save();">Save</button>
+		<button class="btn btn-primary" ng-disabled="form.$invalid || !form.$dirty" type="button" ng-click="save();">Save</button>
 		<a class="btn btn-primary" href="#items">Cancel</a>
 	  </div>
 	</form>
