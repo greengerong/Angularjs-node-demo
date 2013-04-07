@@ -12,25 +12,27 @@
 	    </div>
 	  </div>
 
-	   <div class="control-group" ng-class="{true:'error'}[form.price.$error.required || form.price.$error.number || form.price.$error.min]">
+	   <div class="control-group" ng-class="{true:'error'}[form.price.$error.required || form.price.$error.number || form.price.$error.min || form.price.$error.pattern]">
 	    <label class="control-label" for="price">Price</label>
 	    <div class="controls">
-	      <input type="number" id="price" name="price" ng-model="item.price" min="0" required/>
+	      <input type="number" id="price" name="price" ng-model="item.price" min="0" ng-pattern="/^\d+((\.\d{0,2})?)$/" required/>
 	        <div class="help-block">
 	       <span  ng-show="form.price.$error.required">Tell me price.</span>
 	       <span  ng-show="form.price.$error.number">Must be number.</span>
 	       <span  ng-show="form.price.$error.min">Must be >= 0.</span>
+	       <span  ng-show="form.price.$error.pattern">Must be two float.</span>
 	   </div>
 	    </div>
 	  </div>
-	   <div class="control-group" ng-class="{true:'error'}[form.amount.$error.required || form.amount.$error.number || form.amount.$error.min]">
+	   <div class="control-group" ng-class="{true:'error'}[form.amount.$error.required || form.amount.$error.number || form.amount.$error.min || form.amount.$error.pattern]">
 	    <label class="control-label" for="amount">Amount</label>
 	    <div class="controls">
-	      <input type="number" id="amount" name="amount" ng-model="item.amount" min="0" required/>
+	      <input type="number" id="amount" name="amount" ng-model="item.amount" min="0" ng-pattern="/^\d+$/" required/>
 	        <div class="help-block">
 	       <span ng-show="form.amount.$error.required">Tell me amount.</span>
 	       <span  ng-show="form.amount.$error.number">Must be number.</span>
 	       <span  ng-show="form.amount.$error.min">Must be >= 0.</span>
+	        <span  ng-show="form.amount.$error.pattern">Must be int.</span>
 	   </div>
 	    </div>
 	  </div>
