@@ -37,6 +37,13 @@
 	<![endif]-->
   </head>
   <body ng-app="app">
+    <div id="messageBoxContainer"></div>
+  
+  <div  ng-controller="errorBoxServiceTestController">
+    <a href="javascript:void(0);" ng-click="change();">change text </a>
+    <a href="javascript:void(0);" ng-click="hide();"> hide</a>
+  </div>
+  
     <div class="container">
     <h1><%= title %></h1>
     <div ng-view ></div>
