@@ -10,6 +10,7 @@ if [ -f "./tools/mongodb.tgz" ]
 then
     echo "mongodb not change"
 else
+	mkdir tools
 	curl http://fastdl.mongodb.org/osx/mongodb-osx-x86_64-2.4.1.tgz > ./tools/mongodb.tgz
 	tar zxvf ./tools/mongodb.tgz
 	mv mongodb-osx-x86_64-2.4.1  mongodb 	
