@@ -21,3 +21,6 @@ so you can run those command:
 1: bash ./build/init.sh (notice:dowload mongodb will spend too much time,you can copy your mongodb to tools).
 2: run web app: bash ./build/appstart.sh
 3:run db : bash ./build/dbstart.sh
+
+===================
+notice:when you setup env,maybe will broken no directory ".tools/mongodb.tgz", you can unzip this file by yourself.
