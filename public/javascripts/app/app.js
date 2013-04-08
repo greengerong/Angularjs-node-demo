@@ -21,6 +21,7 @@ value("messageBoxColor",{"error":"alert-error","warring":"","info":"alert-info"}
     
 	return {
 		show : function(title,content,type){
+			//check once append, another only change text and class.
 		$container.html('<div class="box alert alert-block ' + messageBoxColor[type] + ' fade in">' +
 	      '<button data-dismiss="alert" class="close" type="button">×</button>' +
 	      '<h4 class="alert-heading">' + title + '</h4>' + 
@@ -29,6 +30,7 @@ value("messageBoxColor",{"error":"alert-error","warring":"","info":"alert-info"}
 			$container.show();
 		},
 		hide : function(){
+			//hiden , not remove.
 		    $container.html("");
 		}
 	};
