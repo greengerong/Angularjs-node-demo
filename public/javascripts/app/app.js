@@ -12,7 +12,7 @@ app.
 }])
 
 app.value("messageBoxContainer","messageBoxContainer").
-value("messageBoxColor",{"error":"alert-error","warring":"","info":"alert-info"}).
+value("messageBoxColor",{"error":"alert-error","warring":"","info":"alert-info","success":"alert-success"}).
  factory("errorBoxService",["messageBoxContainer","messageBoxColor",function(messageBoxContainer,messageBoxColor){
 	var $container = $("#" +messageBoxContainer)
  	$container.bind("click",function(){
@@ -27,7 +27,7 @@ value("messageBoxColor",{"error":"alert-error","warring":"","info":"alert-info"}
 	      '<h4 class="alert-heading">' + title + '</h4>' + 
 	      '<div class="alert-body hide">' + content + '<div>' +
     	'</div>');
-			$container.show();
+			$container.fadeIn();
 		},
 		hide : function(){
 			//hiden , not remove.
@@ -39,7 +39,7 @@ value("messageBoxColor",{"error":"alert-error","warring":"","info":"alert-info"}
 var errorBoxServiceTestController = function ($scope,errorBoxService) {
 	
      var i = 0;
-     var type =["info","error","warring"];
+     var type =["info","error","warring","success"];
 	 $scope.change =function(){
 	 	errorBoxService.show("hi should be change " + (i++),"<p>nothing<a>link</a></p>",type[i%3]);
 	 };
